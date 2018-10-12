@@ -141,27 +141,31 @@ public class MainActivity extends AppCompatActivity {
             data.put("email", "bootta@yandex.ru");
             data.put("password", "760218e9");
 
-            JSONObject p = (new RPCJson()).data("auth", data).getData();
+            VolleyCallback fun = new Auth();
 
-            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                    (Request.Method.POST, url, p, new Response.Listener<JSONObject>() {
+            RPCJson p = (new RPCJson()).data("auth", data).setUrl(url).setContext(this).send(fun);
 
-                        @Override
-                        public void onResponse(JSONObject response) {
-                            Log.d("deb", "Response: " + response.toString());
-                        }
-                    }, new Response.ErrorListener() {
+//            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+//                    (Request.Method.POST, url, p, new Response.Listener<JSONObject>() {
+//
+//                        @Override
+//                        public void onResponse(JSONObject response) {
+//
+//                            Log.d("deb", "Response: " + response.toString());
+//                        }
+//                    }, new Response.ErrorListener() {
+//
+//                        @Override
+//                        public void onErrorResponse(VolleyError error) {
+//
+//                            Log.d("deb", "ERROR: " + error.getMessage());
+//                            // TODO: Handle error
+//
+//                        }
+//                    });
+//            Log.d("deb", "BODY: " + new String(jsonObjectRequest.getBody(), "UTF-8"));
+//            queue.add(jsonObjectRequest);
 
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-
-                            Log.d("deb", "ERROR: " + error.getMessage());
-                            // TODO: Handle error
-
-                        }
-                    });
-            Log.d("deb", "BODY: " + new String(jsonObjectRequest.getBody(), "UTF-8"));
-            queue.add(jsonObjectRequest);
         } catch (Exception e) {
             Log.d("deb", e.getMessage());
         }

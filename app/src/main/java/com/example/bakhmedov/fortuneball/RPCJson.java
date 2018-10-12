@@ -12,6 +12,8 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONObject;
 
+import javax.security.auth.callback.Callback;
+
 public class RPCJson {
 
     private JSONObject data;
@@ -53,20 +55,15 @@ public class RPCJson {
         return this;
     }
 
-
-
-
-    public RPCJson send(){
+    public RPCJson send(final VolleyCallback callback){
         RequestQueue queue = Volley.newRequestQueue(this.c);
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.POST, this.url, this.data, new Response.Listener<JSONObject>() {
 
-//                    public JSONObject r;
-
                     @Override
                     public void onResponse(JSONObject response) {
-//                        this.r = response;
+                        callback.onSuccessResponse(response);
                         Log.d("deb", "Response: " + response.toString());
                     }
                 }, new Response.ErrorListener() {
