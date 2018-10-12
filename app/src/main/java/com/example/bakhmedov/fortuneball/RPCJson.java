@@ -14,23 +14,19 @@ import org.json.JSONObject;
 
 public class RPCJson {
 
+    //Context
+    protected Context c;
+    //URL for request
+    protected String url;
+
     private JSONObject data;
+
     //Counter request
     private Integer id = 1;
-    //Context
-    private Context c;
-    //URL for request
-    private String url;
+
 
     private JsonObjectRequest jsonObject;
 
-    public void setContext(Context c) {
-        this.c = c;
-    }
-
-    public void setUrl(String url){
-        this.url = url;
-    }
 
     public void data(String method, JSONObject data){
 

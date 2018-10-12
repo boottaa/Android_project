@@ -84,64 +84,21 @@ public class MainActivity extends AppCompatActivity {
         try{
 
             doJson();
-//            doInBackground();
-//            this.$url =
-//            Log.d("deb", "REQUEST" + $url);
+
         }catch (Exception $e){
             Log.d("deb", $e.getMessage().toString());
         }
 
-//        $file.writeFile("lalalasdsdsasdsdasdasdas", this.getBaseContext(), "conf.txt");
-//        String s = $file.readFile(this.getBaseContext(), "conf.txt");
-
-//        Log.d("deb ddd", s);
-
 
     }
 
 
-    protected void doInBackground() {
-
-        String url = "http://billig.ru";
-
-// Instantiate the RequestQueue.
-        RequestQueue queue = Volley.newRequestQueue(this);
-
-// Request a string response from the provided URL.
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Log.d("deb", "Response is: "+ response.substring(0,500));
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.d("deb", "That didn't work!" + error.getMessage());
-            }
-        });
-
-// Add the request to the RequestQueue.
-        queue.add(stringRequest);
-    }
  //https://developer.android.com/training/volley/request-custom
     private void doJson(){
 
         try {
 
-            (new Auth()).auth("bootta@yandex.ru","760218e9", this);
-
-//            String url = "http://billig.ru/auth";
-//            JSONObject data = new JSONObject();
-//            data.put("email", "bootta@yandex.ru");
-//            data.put("password", "760218e9");
-
-//            RPCJson p = (new RPCJson())
-//                    .data("auth", data)
-//                    .setUrl(url)
-//                    .setContext(this)
-//                    .callback(new Auth())
-//                    .send();
+            (new Auth(this)).auth("bootta@yandex.ru","760218e9");
 
 
         } catch (Exception e) {

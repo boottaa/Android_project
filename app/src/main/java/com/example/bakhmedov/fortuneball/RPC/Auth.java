@@ -11,22 +11,23 @@ import org.json.JSONObject;
 public class Auth extends RPCJson implements VolleyCallback  {
 
     //Url for http request
-//    @Override
-    public String url = "http://billig.ru/auth";
+    public Auth(Context c){
+        super.c = c;
+        super.url = "http://billig.ru/auth";
+    }
 
     //Need for case callback
     private String method;
 
 
-    public void auth(String email, String pass, Context c){
+    public void auth(String email, String pass){
         try {
             JSONObject data = new JSONObject();
             data.put("email", email);
             data.put("password", pass);
 
             this.method = "auth";
-            this.setUrl(this.url);
-            this.setContext(c);
+
             this.data(this.method, data);
             this.callback(this).send();
 
@@ -39,8 +40,11 @@ public class Auth extends RPCJson implements VolleyCallback  {
 
     @Override
     public void onSuccess(JSONObject result) {
-        if(this.method.equals("auth")) {
+        if (this.method.equals("auth")) {
             Log.d("deb", "IM WORKING: " + result.toString());
+        } else if (this.method.equals("registration")) {
+            Log.d("deb", "IM REGISTRATION: " + result.toString());
         }
+        //и тд
     }
 }
