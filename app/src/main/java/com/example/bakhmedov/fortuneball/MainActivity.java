@@ -13,13 +13,11 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.bakhmedov.fortuneball.RPC.Auth;
 
 import org.json.JSONObject;
-
-import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -128,28 +126,26 @@ public class MainActivity extends AppCompatActivity {
     }
  //https://developer.android.com/training/volley/request-custom
     private void doJson(){
-        String url = "http://billig.ru/auth";
-
 
         try {
-            
-            RequestQueue queue = Volley.newRequestQueue(this);
 
-            JSONObject data = new JSONObject();
-            data.put("email", "bootta@yandex.ru");
-            data.put("password", "760218e9");
+            (new Auth()).auth("bootta@yandex.ru","760218e9", this);
 
-            VolleyCallback auth = new Auth();
+//            String url = "http://billig.ru/auth";
+//            JSONObject data = new JSONObject();
+//            data.put("email", "bootta@yandex.ru");
+//            data.put("password", "760218e9");
 
-            RPCJson p = (new RPCJson())
-                    .data("auth", data)
-                    .setUrl(url)
-                    .setContext(this)
-                    .send(auth);
+//            RPCJson p = (new RPCJson())
+//                    .data("auth", data)
+//                    .setUrl(url)
+//                    .setContext(this)
+//                    .callback(new Auth())
+//                    .send();
 
 
         } catch (Exception e) {
-            Log.d("deb", e.getMessage());
+            Log.d("deb", "asdsd" +e.getClass() + e.getMessage());
         }
 
     }

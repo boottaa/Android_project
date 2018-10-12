@@ -12,8 +12,6 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONObject;
 
-import javax.security.auth.callback.Callback;
-
 public class RPCJson {
 
     private JSONObject data;
@@ -23,22 +21,18 @@ public class RPCJson {
     private Context c;
     //URL for request
     private String url;
-    //This result after reguest
-    public JSONObject result;
 
-    public RPCJson setContext(Context c) {
+    private JsonObjectRequest jsonObject;
+
+    public void setContext(Context c) {
         this.c = c;
-        return this;
     }
 
-    public RPCJson setUrl(String url){
-
+    public void setUrl(String url){
         this.url = url;
-
-        return this;
     }
 
-    public RPCJson data(String method, JSONObject data){
+    public void data(String method, JSONObject data){
 
         try {
             JSONObject p = new JSONObject();
@@ -51,19 +45,15 @@ public class RPCJson {
         }catch (Exception e){
             Log.d("deb", e.getMessage());
         }
-
-        return this;
     }
 
-    public RPCJson send(final VolleyCallback callback){
-        RequestQueue queue = Volley.newRequestQueue(this.c);
-
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+    public RPCJson callback(final VolleyCallback callback){
+          this.jsonObject = new JsonObjectRequest
                 (Request.Method.POST, this.url, this.data, new Response.Listener<JSONObject>() {
 
                     @Override
                     public void onResponse(JSONObject response) {
-                        callback.onSuccessResponse(response);
+                        callback.onSuccess(response);
                         Log.d("deb", "Response: " + response.toString());
                     }
                 }, new Response.ErrorListener() {
@@ -76,9 +66,12 @@ public class RPCJson {
 
                     }
                 });
+        return this;
+    }
 
-        queue.add(jsonObjectRequest);
-
+    public RPCJson send(){
+        RequestQueue queue = Volley.newRequestQueue(this.c);
+        queue.add(this.jsonObject);
         return  this;
     }
 

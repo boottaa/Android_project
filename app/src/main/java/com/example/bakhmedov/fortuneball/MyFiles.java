@@ -22,7 +22,6 @@ public class MyFiles {
         }
     }
 
-
     public String readFile(Context context, String name) {
 
         String ret = "";
