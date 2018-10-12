@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="PROFILE">Профиль</string>
+    <string name="ORDERS">Заявки</string>
+    <string name="MASTER">Мастер</string>
+    <string name="SETINGS">Настройки</string>
+    <string name="EXIT">Выйти</string>
+</resources>

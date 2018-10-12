@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.bakhmedov.fortuneball.MainActivity">
+    <item android:title="@string/PROFILE" />
+    <item android:title="@string/ORDERS" />
+    <item android:title="@string/MASTER" />
+    <item android:title="@string/SETINGS" />
+    <item android:title="@string/EXIT" />
+</menu>
