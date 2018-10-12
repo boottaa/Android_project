@@ -132,39 +132,21 @@ public class MainActivity extends AppCompatActivity {
 
 
         try {
-
-
+            
             RequestQueue queue = Volley.newRequestQueue(this);
-
 
             JSONObject data = new JSONObject();
             data.put("email", "bootta@yandex.ru");
             data.put("password", "760218e9");
 
-            VolleyCallback fun = new Auth();
+            VolleyCallback auth = new Auth();
 
-            RPCJson p = (new RPCJson()).data("auth", data).setUrl(url).setContext(this).send(fun);
+            RPCJson p = (new RPCJson())
+                    .data("auth", data)
+                    .setUrl(url)
+                    .setContext(this)
+                    .send(auth);
 
-//            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-//                    (Request.Method.POST, url, p, new Response.Listener<JSONObject>() {
-//
-//                        @Override
-//                        public void onResponse(JSONObject response) {
-//
-//                            Log.d("deb", "Response: " + response.toString());
-//                        }
-//                    }, new Response.ErrorListener() {
-//
-//                        @Override
-//                        public void onErrorResponse(VolleyError error) {
-//
-//                            Log.d("deb", "ERROR: " + error.getMessage());
-//                            // TODO: Handle error
-//
-//                        }
-//                    });
-//            Log.d("deb", "BODY: " + new String(jsonObjectRequest.getBody(), "UTF-8"));
-//            queue.add(jsonObjectRequest);
 
         } catch (Exception e) {
             Log.d("deb", e.getMessage());
