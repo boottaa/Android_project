@@ -1,4 +1,4 @@
-package com.example.bakhmedov.fortuneball;
+package com.example.bakhmedov.fortuneball.Controller.RPC;
 
 import org.json.JSONObject;
 

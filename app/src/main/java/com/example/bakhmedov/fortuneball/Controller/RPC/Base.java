@@ -1,4 +1,4 @@
-package com.example.bakhmedov.fortuneball;
+package com.example.bakhmedov.fortuneball.Controller.RPC;
 
 import android.content.Context;
 import android.util.Log;
@@ -12,7 +12,7 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONObject;
 
-public class RPCJson {
+public class Base {
 
     //Context
     protected Context c;
@@ -24,9 +24,7 @@ public class RPCJson {
     //Counter request
     private Integer id = 1;
 
-
     private JsonObjectRequest jsonObject;
-
 
     public void data(String method, JSONObject data){
 
@@ -43,7 +41,7 @@ public class RPCJson {
         }
     }
 
-    public RPCJson callback(final VolleyCallback callback){
+    protected Base callback(final VolleyCallback callback){
           this.jsonObject = new JsonObjectRequest
                 (Request.Method.POST, this.url, this.data, new Response.Listener<JSONObject>() {
 
@@ -65,10 +63,9 @@ public class RPCJson {
         return this;
     }
 
-    public RPCJson send(){
+    public void send(){
         RequestQueue queue = Volley.newRequestQueue(this.c);
         queue.add(this.jsonObject);
-        return  this;
     }
 
     public JSONObject getData(){

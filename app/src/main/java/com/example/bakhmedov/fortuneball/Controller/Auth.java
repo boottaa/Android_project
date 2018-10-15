@@ -1,14 +1,14 @@
-package com.example.bakhmedov.fortuneball.RPC;
+package com.example.bakhmedov.fortuneball.Controller;
 
 import android.content.Context;
 import android.util.Log;
 
-import com.example.bakhmedov.fortuneball.RPCJson;
-import com.example.bakhmedov.fortuneball.VolleyCallback;
+import com.example.bakhmedov.fortuneball.Controller.RPC.Base;
+import com.example.bakhmedov.fortuneball.Controller.RPC.VolleyCallback;
 
 import org.json.JSONObject;
 
-public class Auth extends RPCJson implements VolleyCallback  {
+public class Auth extends Base implements VolleyCallback  {
 
     //Url for http request
     public Auth(Context c){
@@ -31,6 +31,28 @@ public class Auth extends RPCJson implements VolleyCallback  {
             this.data(this.method, data);
             this.callback(this).send();
 
+
+        }catch (Exception e){
+            Log.d("deb", e.getMessage());
+        }
+    }
+
+    public void registration(String fname, String lname, String email, String pass){
+        try {
+
+            JSONObject data = new JSONObject();
+            data.put("fname", email);
+            data.put("lname", pass);
+            data.put("email", email);
+            data.put("password", pass);
+
+            JSONObject objectData = new JSONObject();
+            objectData.put("data", data);
+
+            this.method = "registration";
+
+            this.data(this.method, objectData);
+            this.callback(this).send();
 
         }catch (Exception e){
             Log.d("deb", e.getMessage());

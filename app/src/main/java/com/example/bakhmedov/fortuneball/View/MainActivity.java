@@ -1,4 +1,4 @@
-package com.example.bakhmedov.fortuneball;
+package com.example.bakhmedov.fortuneball.View;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,15 +9,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.example.bakhmedov.fortuneball.RPC.Auth;
-
-import org.json.JSONObject;
+import com.example.bakhmedov.fortuneball.Controller.Auth;
+import com.example.bakhmedov.fortuneball.MyFiles;
+import com.example.bakhmedov.fortuneball.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -99,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         try {
 
             (new Auth(this)).auth("bootta@yandex.ru","760218e9");
-
+            (new Auth(this)).registration("asdssad" , "asdsdsad", "asdasd@yandex.ru", "1234567");
 
         } catch (Exception e) {
             Log.d("deb", "asdsd" +e.getClass() + e.getMessage());
