@@ -1,6 +1,7 @@
-package com.example.bakhmedov.fortuneball.Controller.RPC;
+package com.example.bakhmedov.fortuneball.RPC.Base;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
 import com.android.volley.Request;
@@ -17,7 +18,7 @@ public class Base {
     //Context
     protected Context c;
     //URL for request
-    protected String url;
+    protected static String url;
 
     private JSONObject data;
 
@@ -43,7 +44,7 @@ public class Base {
 
     protected Base callback(final VolleyCallback callback){
           this.jsonObject = new JsonObjectRequest
-                (Request.Method.POST, this.url, this.data, new Response.Listener<JSONObject>() {
+                (Request.Method.POST, Base.url, this.data, new Response.Listener<JSONObject>() {
 
                     @Override
                     public void onResponse(JSONObject response) {
@@ -61,6 +62,11 @@ public class Base {
                     }
                 });
         return this;
+    }
+
+    protected void setActivity(Class $class){
+        Intent intent = new Intent(this.c, $class);
+        this.c.startActivity(intent);
     }
 
     public void send(){

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.MainActivity">
+    tools:context=".View.V_Auth">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -22,16 +22,6 @@
 
     <include
         android:id="@+id/include"
-        layout="@layout/content_main" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButton3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="right|bottom"
-        app:srcCompat="@android:drawable/ic_menu_add"
-        tools:srcCompat="@android:drawable/stat_notify_error" />
+        layout="@layout/auth" />
 
 </android.support.design.widget.CoordinatorLayout>

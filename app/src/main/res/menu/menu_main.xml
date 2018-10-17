@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.bakhmedov.fortuneball.View.MainActivity">
+    tools:context="com.example.bakhmedov.fortuneball.View.V_Auth">
     <item android:title="@string/PROFILE" />
     <item android:title="@string/ORDERS" />
     <item android:title="@string/MASTER" />

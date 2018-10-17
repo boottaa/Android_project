@@ -1,5 +1,6 @@
 package com.example.bakhmedov.fortuneball.View;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -9,20 +10,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 
-import com.example.bakhmedov.fortuneball.Controller.Auth;
-import com.example.bakhmedov.fortuneball.MyFiles;
+import com.example.bakhmedov.fortuneball.RPC.Auth.Auth;
+import com.example.bakhmedov.fortuneball.Library.Files;
 import com.example.bakhmedov.fortuneball.R;
 
-public class MainActivity extends AppCompatActivity {
+public class V_Auth extends AppCompatActivity {
 
-    private MyFiles $file;
+    private Files $file;
     private String $url;
 
     private void init()
     {
-        this.$file = new MyFiles();
-
-
+        this.$file = new Files();
     }
 
     @Override
@@ -53,52 +52,18 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
-
-
-
-    public void bcli(View view) {
-
-
-        /**
-        TextView textView = (TextView) findViewById(R.id.textView);
-        textView.setText("HELLO WORLD");
-
-        **/
-
-    }
-
-    public void bali(View view) {
-
-        EditText editText = (EditText) findViewById(R.id.editText);
-        EditText password = (EditText) findViewById(R.id.password);
-        String email = editText.getText().toString();
-        String pass = password.getText().toString();
-
+    public void login(View view) {
         try{
+            EditText editText = (EditText) findViewById(R.id.email);
+            EditText password = (EditText) findViewById(R.id.password);
+            String email = editText.getText().toString();
+            String pass = password.getText().toString();
 
-            doJson();
+//.auth("bootta@yandex.ru","760218e9");
+            (new Auth(this)).auth(email,pass);
 
         }catch (Exception $e){
             Log.d("deb", $e.getMessage().toString());
         }
-
-
     }
-
-
- //https://developer.android.com/training/volley/request-custom
-    private void doJson(){
-
-        try {
-
-            (new Auth(this)).auth("bootta@yandex.ru","760218e9");
-            (new Auth(this)).registration("asdssad" , "asdsdsad", "asdasd@yandex.ru", "1234567");
-
-        } catch (Exception e) {
-            Log.d("deb", "asdsd" +e.getClass() + e.getMessage());
-        }
-
-    }
-
 }

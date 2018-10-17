@@ -1,4 +1,4 @@
-package com.example.bakhmedov.fortuneball;
+package com.example.bakhmedov.fortuneball.Library;
 
 import android.content.Context;
 import android.util.Log;
@@ -10,7 +10,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class MyFiles {
+public class Files {
     public void writeFile(String data, Context context, String name) {
         try {
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput(name, Context.MODE_PRIVATE));

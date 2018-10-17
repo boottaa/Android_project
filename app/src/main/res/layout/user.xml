@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".View.V_Customer"
+    tools:ignore="MissingDefaultResource">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineTopInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="15dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineBottomInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="142dp" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="23dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineMidl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="151dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="363dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="213dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="fName lName"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTopInfo" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="128dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="128dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="Email:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTopInfo" />
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="214dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="128dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="test@test.ru"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineMidl"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTopInfo" />
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="172dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="Phone:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTopInfo" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="214dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="172dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="+79163000927"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineMidl"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTopInfo" />
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTopInfo"
+        tools:srcCompat="@tools:sample/avatars[0]" />
+
+
+</android.support.constraint.ConstraintLayout>
