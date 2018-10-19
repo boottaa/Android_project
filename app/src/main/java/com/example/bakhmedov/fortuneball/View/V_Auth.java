@@ -16,13 +16,7 @@ import com.example.bakhmedov.fortuneball.R;
 
 public class V_Auth extends AppCompatActivity {
 
-    private Files $file;
     private String $url;
-
-    private void init()
-    {
-        this.$file = new Files();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +24,6 @@ public class V_Auth extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        //Init dependencies
-        init();
     }
 
     @Override

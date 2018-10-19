@@ -30,10 +30,13 @@ public class Base {
     public void data(String method, JSONObject data){
 
         try {
+            JSONObject params = new JSONObject();
+            params.put("data", data);
+
             JSONObject p = new JSONObject();
             p.put("method", method);
             p.put("id", this.id++);
-            p.put("params", data);
+            p.put("params", params);
 
             this.data = p;
 
