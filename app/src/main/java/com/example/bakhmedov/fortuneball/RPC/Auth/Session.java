@@ -15,16 +15,21 @@ public class Session {
 
     private Context c;
 
-    Session(Context c){
+    private JSONObject info;
+
+    public Session(Context c){
         this.c = c;
     }
 
-    void save(JSONObject data){
+    void save(JSONObject data)
+    {
         this.file.writeFile(data.toString(), this.c, this.fileName);
     }
 
-    public JSONObject get() throws JSONException {
-        return new JSONObject(this.file.readFile(this.c, this.fileName));
+    public JSONObject run() throws JSONException {
+        this.info = new JSONObject(this.file.readFile(this.c, this.fileName));
+        return this.info;
     };
+
 
 }

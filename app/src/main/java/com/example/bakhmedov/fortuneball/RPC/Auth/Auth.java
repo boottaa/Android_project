@@ -30,7 +30,7 @@ public class Auth extends Base implements VolleyCallback  {
     public void auth(String email, String pass){
         try {
 //          ТАК можно проверить авторизован ли пользователь
-//            if(this.session.get().has("hash")){
+//            if(this.session.run().has("hash")){
 //                Log.d("deb", "GOOOOOODDDDD");
 //
 //                return;
