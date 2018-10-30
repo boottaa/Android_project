@@ -1,7 +1,9 @@
 package com.example.bakhmedov.fortuneball.View;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.bakhmedov.fortuneball.R;
@@ -38,6 +40,15 @@ public class V_Customer extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    public void goToAddress(View view) {
+//        Intent intent = new Intent(this, );
+//        this.c.startActivity(intent);
+    }
+
+    public void goToProfessionUser(View view){
+
     }
 
 }
