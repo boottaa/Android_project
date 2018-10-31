@@ -1,6 +1,5 @@
 package com.example.bakhmedov.fortuneball.View;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -9,6 +8,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.ViewFlipper;
 
 import com.example.bakhmedov.fortuneball.RPC.Auth.Auth;
 import com.example.bakhmedov.fortuneball.Library.Files;
@@ -21,9 +21,11 @@ public class V_Auth extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
+        setContentView(R.layout.auth);
+//        setContentView(R.layout.activity_main);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
     }
 
     @Override
@@ -45,6 +47,9 @@ public class V_Auth extends AppCompatActivity {
 
     public void login(View view) {
         try{
+
+//        findViewById(R.id.lay_auth).setVisibility(View.GONE);
+//        findViewById(R.id.lay_user).setVisibility(View.VISIBLE);
             EditText editText = (EditText) findViewById(R.id.email);
             EditText password = (EditText) findViewById(R.id.password);
             String email = editText.getText().toString();

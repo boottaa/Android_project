@@ -1,8 +1,10 @@
 package com.example.bakhmedov.fortuneball.RPC.Base;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.view.View;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -10,6 +12,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.bakhmedov.fortuneball.R;
 
 import org.json.JSONObject;
 
@@ -70,6 +73,17 @@ public class Base {
     protected void setActivity(Class $class){
         Intent intent = new Intent(this.c, $class);
         this.c.startActivity(intent);
+    }
+
+    protected void setLayout(Integer $old, Integer $new){
+
+        View rootView = ((Activity)c).getWindow().getDecorView().findViewById(android.R.id.content);
+
+        rootView.findViewById($old).setVisibility(View.GONE);
+        rootView.findViewById($new).setVisibility(View.VISIBLE);
+
+//        View v = rootView.findViewById(R.id.your_view_id);
+
     }
 
     public void send(){

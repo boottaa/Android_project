@@ -5,4 +5,9 @@
     <string name="MASTER">Мастер</string>
     <string name="SETINGS">Настройки</string>
     <string name="EXIT">Выйти</string>
+    <string name="orders">Заявки</string>
+    <string name="profile">Профиль</string>
+    <string name="settings">Настройки</string>
+    <string name="share">Share</string>
+    <string name="send">Send</string>
 </resources>

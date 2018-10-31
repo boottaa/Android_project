@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
+import com.example.bakhmedov.fortuneball.R;
 import com.example.bakhmedov.fortuneball.RPC.Base.Base;
 import com.example.bakhmedov.fortuneball.RPC.Base.VolleyCallback;
 import com.example.bakhmedov.fortuneball.View.V_Auth;
@@ -81,7 +82,7 @@ public class Auth extends Base implements VolleyCallback  {
                         JSONObject r = result.getJSONObject("result");
                         this.session.save(r);
                         this.setActivity(V_Customer.class);
-
+//                        this.setLayout(R.id.lay_auth, R.id.lay_user);
                         Log.d("deb", "GOOD JOB");
                     } else if(result.has("error")) {
                         throw new Exception("Incorrect login or password");
